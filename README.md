@@ -1,10 +1,10 @@
 # Ministate
 
-Simplest state manager ever.
+Manage all your state the React way.
 
 ## Why?
 
-Thanks [Jamie Kyle](https://github.com/jamiebuilds) for building [Unstated](https://unstated.io/) and opening the way for easier state management. Suddenly, many people began to think that [Redux](https://redux.js.org/) or [MobX](https://mobx.js.org/) might be too complicated. Unstated's minimalist API is fantastic, but if like me you don't need dependency injection, you'll love Ministate which provides an even simpler API.
+Thanks [Jamie Kyle](https://github.com/jamiebuilds) for building [Unstated](https://unstated.io/) and opening the way for easier state management. Suddenly, many people began to think that [Redux](https://redux.js.org/) or [MobX](https://mobx.js.org/) might be too complicated. Unstated's minimalist API is great, but if like me you don't need dependency injection, you'll love Ministate which provides an even simpler API.
 
 ## Installation
 
