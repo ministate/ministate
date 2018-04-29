@@ -4,7 +4,7 @@ Simplest state manager ever.
 
 ## Why?
 
-Because less is more.
+Thanks [Jamie Kyle](https://github.com/jamiebuilds) for building [Unstated](https://unstated.io/) and opening the way for easier state management. Suddenly, many people began to think that [Redux](https://redux.js.org/) or [MobX](https://mobx.js.org/) might be too complicated. Unstated's minimalist API is fantastic, but if like me you don't need dependency injection, you'll love Ministate which provides an even simpler API.
 
 ## Installation
 
@@ -119,10 +119,6 @@ class Component extends React.Component {
   }
 }
 ```
-
-## Inspiration
-
-Thanks to [Jamie Kyle](https://github.com/jamiebuilds) for building [Unstated](https://unstated.io/). Suddenly, many people began to think that [Redux](https://redux.js.org/) or [MobX](https://mobx.js.org/) might be too complicated. I love Unstated's extreme minimalism, but if like me, you don't need dependency injection, you'll prefer Ministate which provides an even simpler API.
 
 ## License
 
