@@ -1,0 +1,7 @@
+node_modules
+dist
+builds
+vendor
+_drafts
+_old
+_private

@@ -1,0 +1,13 @@
+{
+  "@import": "1place/npm-package#^0.1.0",
+  "name": "@ministate/base",
+  "version": "0.1.2",
+  "description": "Simplest state manager ever",
+  "keywords": [
+    "state-manager",
+    "react"
+  ],
+  "author": "Manuel Vila <hi@mvila.me>",
+  "license": "MIT",
+  "repository": "https://github.com/ministate/ministate.git"
+}

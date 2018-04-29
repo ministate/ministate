@@ -1,0 +1,58 @@
+{
+  "@import": ["website/hosted-website#^0.1.0", "js/resource#^0.1.0"],
+  "dependencies": {
+    "@ministate/base": "^0.1.0",
+    "@ministate/react": "^0.1.0"
+  },
+  "builder": {
+    "run": {
+      "@type": "method",
+      "@run": [
+        "@parent transpiler run",
+        "@parent bundler run",
+        "@parent copier run",
+        "@parent freezer run",
+        "(@import tool/notifier#^0.1.0) notify 'Build completed'"
+      ],
+      "@listen": "@build"
+    },
+    "fileWatcher": {
+      "@import": "tool/file-watcher#^0.1.0",
+      "files": ["./index.html", "./src/**"],
+      "onFileModified": {
+        "@type": "method",
+        "@run": "@parent run",
+        "@listen": "fileModified"
+      }
+    }
+  },
+  "transpiler": {
+    "@import": "js/transpiler#^0.1.15",
+    "targets": {
+      "chrome": "41",
+      "safari": "10",
+      "firefox": "50",
+      "edge": "13",
+      "ie": "11"
+    },
+    "format": "esm",
+    "transformJSX": true
+  },
+  "bundler": {
+    "@import": "js/bundler#^0.1.0",
+    "entry": "./dist/esm/index.js",
+    "target": "browser",
+    "format": "iife",
+    "globals": {
+      "react": "React",
+      "react-dom": "ReactDOM"
+    }
+  },
+  "copier": {
+    "@import": "tool/file-copier#^0.1.0",
+    "sourceDirectory": "./"
+  },
+  "freezer": {
+    "@import": "website/freezer#^0.1.0"
+  }
+}
