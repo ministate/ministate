@@ -4,7 +4,7 @@ export function subscribe(source) {
   return function (WrappedComponent) {
     return class MinistateSubscriber extends React.Component {
       update = () => {
-        this.forceUpdate();
+        this.setState({});
       };
 
       componentDidMount() {

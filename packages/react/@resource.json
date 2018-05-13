@@ -1,7 +1,7 @@
 {
   "@import": "1place/npm-package#^0.1.0",
   "name": "@ministate/react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Subscribe your React components to your Ministate instances",
   "keywords": [
     "state-manager",
