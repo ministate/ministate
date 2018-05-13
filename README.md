@@ -1,7 +1,6 @@
 <h1 align="center">
-	<br>
   <br>
-	<img src="branding/ministate-logo-v2-dark-mode-ok.svg" width="640" alt="Ministate">
+	<img src="branding/ministate-logo-v2-dark-mode-ok.svg" width="480" alt="Ministate">
 	<br>
   <br>
 </h1>
