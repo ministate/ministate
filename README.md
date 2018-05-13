@@ -93,9 +93,9 @@ Example:
 console.log(app.state.count);
 ```
 
-### `app.setState(newState)`
+### `app.setState(updater[, callback])`
 
-Change your state, the React way.
+Change your state, the [React way](https://reactjs.org/docs/react-component.html#setstate).
 
 Example:
 
