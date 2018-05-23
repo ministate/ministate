@@ -42,10 +42,6 @@ export class Base {
     }
   }
 
-  forceUpdate() {
-    this.publish();
-  }
-
   subscribe(subscriber) {
     this._subscribers.push(subscriber);
   }
