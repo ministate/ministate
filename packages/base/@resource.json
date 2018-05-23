@@ -3,14 +3,17 @@
   "name": "@ministate/base",
   "version": "0.1.4",
   "description": "Manage all your state the React way",
-  "keywords": [
-    "state-manager",
-    "react"
-  ],
+  "keywords": ["state-manager", "react"],
   "author": "Manuel Vila <hi@mvila.me>",
   "license": "MIT",
   "repository": "https://github.com/ministate/ministate.git",
   "dependencies": {
     "tickedoff": "^1.0.2"
+  },
+  "@unpublishable": {
+    "tests": {
+      "@import": "1place/jest#^0.1.0",
+      "@directory": "./tests"
+    }
   }
 }
