@@ -31,7 +31,11 @@ export class Base {
       defer(() => {
         this._deferredPublication = false;
 
-        for (const subscriber of this._subscribers) {
+        // Since subscribers can unsubscribe themselves,
+        // let's copy them to ensure a proper iteration
+        const subscribers = [...this._subscribers];
+
+        for (const subscriber of subscribers) {
           subscriber();
         }
       });
