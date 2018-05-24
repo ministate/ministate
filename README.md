@@ -112,7 +112,7 @@ app.setState({count: 999});
 
 ### `@subscribe(app)`
 
-Subscribe your React components to your Ministate instances so that your components are automatically rerendered when your state change.
+Subscribe your React components to your Ministate instances so that your components are automatically rerendered when state change.
 
 Example:
 

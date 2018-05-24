@@ -27,15 +27,9 @@ export class Base {
   publish() {
     if (!this._deferredPublication) {
       this._deferredPublication = true;
-
       defer(() => {
         this._deferredPublication = false;
-
-        // Since subscribers can unsubscribe themselves,
-        // let's copy them to ensure a proper iteration
-        const subscribers = [...this._subscribers];
-
-        for (const subscriber of subscribers) {
+        for (const subscriber of this._subscribers) {
           subscriber();
         }
       });
@@ -43,13 +37,16 @@ export class Base {
   }
 
   subscribe(subscriber) {
-    this._subscribers.push(subscriber);
+    this._subscribers = [...this._subscribers, subscriber];
   }
 
   unsubscribe(subscriber) {
     const index = this._subscribers.indexOf(subscriber);
     if (index !== -1) {
-      this._subscribers.splice(index, 1);
+      this._subscribers = [
+        ...this._subscribers.slice(0, index),
+        ...this._subscribers.slice(index + 1)
+      ];
     }
   }
 
