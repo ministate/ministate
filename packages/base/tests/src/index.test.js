@@ -5,7 +5,6 @@ describe('Ministate', () => {
     class App extends Base {}
 
     const app = new App();
-
     expect(app.state).toEqual({});
 
     app.setState({count: 1}, () => {
@@ -20,8 +19,8 @@ describe('Ministate', () => {
 
   test('setState(updaterFunction, callback)', done => {
     class App extends Base {}
-    const app = new App();
 
+    const app = new App();
     expect(app.state).toEqual({});
 
     app.setState(
@@ -43,14 +42,28 @@ describe('Ministate', () => {
     );
   });
 
+  test('setState(object) => promise', async () => {
+    class App extends Base {}
+
+    const app = new App();
+    expect(app.state).toEqual({});
+
+    let subscriberInvocations = 0;
+    app.subscribe(() => subscriberInvocations++);
+    expect(subscriberInvocations).toBe(0);
+
+    await app.setState({count: 1});
+    expect(app.state).toEqual({count: 1});
+    expect(subscriberInvocations).toBe(1);
+  });
+
   test('subscribe(subscriber)', done => {
     class App extends Base {}
+
     const app = new App();
 
     let subscriberInvocations = 0;
-
     app.subscribe(() => subscriberInvocations++);
-
     expect(subscriberInvocations).toBe(0);
 
     app.setState({count: 1}, () => {
@@ -68,12 +81,11 @@ describe('Ministate', () => {
 
   test('subscribeOnce(subscriber)', done => {
     class App extends Base {}
+
     const app = new App();
 
     let subscriberInvocations = 0;
-
     app.subscribeOnce(() => subscriberInvocations++);
-
     expect(subscriberInvocations).toBe(0);
 
     app.setState({count: 1}, () => {
@@ -88,10 +100,10 @@ describe('Ministate', () => {
 
   test('unsubscribe(subscriber)', done => {
     class App extends Base {}
+
     const app = new App();
 
     let subscriberInvocations = 0;
-
     const subscriber = () => subscriberInvocations++;
     app.subscribe(subscriber);
 
@@ -111,11 +123,11 @@ describe('Ministate', () => {
 
   test('publish()', done => {
     class App extends Base {}
+
     const app = new App();
 
     let subscriberInvocations = 0;
     app.subscribe(() => subscriberInvocations++);
-
     expect(subscriberInvocations).toBe(0);
 
     app.publish();

@@ -17,11 +17,16 @@ export class Base {
 
     Object.assign(this.state, newState);
 
+    this.publish();
+
+    // Since publish() is deffered, it's okay to add subscribers afterward
     if (callback) {
       this.subscribeOnce(callback);
+    } else {
+      return new Promise(resolve => {
+        this.subscribeOnce(resolve);
+      });
     }
-
-    this.publish();
   }
 
   publish() {

@@ -1,7 +1,7 @@
 {
   "@import": "1place/npm-package#^0.1.0",
   "name": "@ministate/base",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Manage all your state the React way",
   "keywords": [
     "state-manager",
