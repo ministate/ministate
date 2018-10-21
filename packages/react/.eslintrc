@@ -1,6 +1,14 @@
 {
   "extends": ["plugin:react/recommended"],
   "plugins": ["react"],
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "react": {
+      "version": "16"
+    }
+  },
   "rules": {
     "react/no-unescaped-entities": 0
   }

@@ -1,7 +1,8 @@
-node_modules
+node_modules*
 dist
 builds
 vendor
-_drafts
+@resource*.json
 _old
+_drafts
 _private
